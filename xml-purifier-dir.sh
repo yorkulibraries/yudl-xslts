@@ -20,11 +20,11 @@ fi
 
 if [ ! -d "$xmlfiles_dir" ]
 then
-   echo "$xmlfiles_dir is not a directory" 
+   echo "$xmlfiles_dir is not a directory"
    exit 1
 fi
 
-echo "Using..." 
+echo "Using..."
 echo $xmlfiles_dir
 echo $xslt
 
@@ -40,15 +40,14 @@ then
   for f in $xmlfiles_dir/*.xml
   do
    if [[ $f == *.xml ]]
-   then 
+   then
      #xmlfile = $(basename $f)
      result=`java -jar /tmp/saxon9he.jar -o:$cleaned/$(basename $f) $f $xslt `
      #result=`xmllint --noout --schema /home/nruest/mods.xsd $f 2> validator-script.log`
      echo "$cleaned/$(basename $f)"
    else
-     echo "$f is NOT XML" 
+     echo "$f is NOT XML"
    fi
   done
   echo "Check cleaned-xml folder for output files"
 fi
-
