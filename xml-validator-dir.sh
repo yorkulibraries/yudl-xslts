@@ -17,12 +17,12 @@ then
         exit 1
 fi
 
-#echo "I passed arg check" 
+#echo "I passed arg check"
 #echo $xmlfiles_dir
 
 if [ ! -d "$xmlfiles_dir" ]
 then
-   echo "$xmlfiles_dir is not a directory" 
+   echo "$xmlfiles_dir is not a directory"
    exit 1
 fi
 
@@ -53,9 +53,8 @@ then
        cp $f ./bad-xml/$(basename $f)
      fi 
    else
-     echo "$f is NOT XML" 
+     echo "$f is NOT XML"
    fi
   done
   exit 0
 fi
-
